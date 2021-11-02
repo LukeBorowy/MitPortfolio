@@ -1,0 +1,77 @@
+input[type="range"]{
+	-webkit-appearance: slider-vertical;
+	appearance: slider-vertical;
+	width:5px;
+	display:block;
+}
+#damage-armorp-slider{
+	transform: rotate(60deg);
+    position: absolute;
+    top: 6px;
+    left: 393px;
+}
+#armor-health-slider{
+	margin-left:60px;
+}
+#damage-aspeed-slider{
+	margin-left:103px;
+}
+.input{
+	width:35px;
+}
+#container {
+    width:500px;
+    height: 200px;    
+    padding: 10px;
+}
+#armor-div{
+    width: 100px;
+    height: 200px;
+    float: left;
+}
+#weapon-div {
+	float:right;
+	width: 150px;;
+    height: 200px;
+}
+#simulation{
+	position: absolute;
+	
+	right: 5px;
+	top:5px;
+	
+}
+#canvas{
+	border:5px solid black;
+	width:1000px;
+	border-radius: 25px;
+}
+#sim-winner{	
+	font-size:50px;
+}
+#sim-pause{
+	display: none;
+}
+.equip-div{
+	padding:5px;
+	display:inline-block;
+	border-radius: 5px;
+	border:3px solid black;
+}
+#equip{
+	position: absolute;
+	top:275px;
+	text-align:center;
+}
+.sim-stat-input{
+	width:140px;
+	margin:5px;
+}
+#equipment-code{
+	position: absolute;
+	border:2px solid green;
+	border-radius: 2px;
+	top:420px;
+	left:805px;
+	text-align:left;
+}

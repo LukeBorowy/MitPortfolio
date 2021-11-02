@@ -1,0 +1,69 @@
+*********For loader:
+Keep the simloader, just add needed images up top.
+
+*********For server:
+
+Hopefully can copy all stats and stuff, using CALC COPY comments
+replace everything above the socket.on's, make sure glue works
+all the `on` stuff is not needed, server does not need to respond to client requests
+require present change to: var present = function () { return performance.now() };
+put these in main update loop:
+    aiGetChoices(playerA,playerB);
+    aiGetChoices(playerB,playerA);
+
+const maplimitx = 3000;
+const maplimity = 1800;
+
+Put this in redirect to update
+    if (state == "sim") { 
+        update();
+        if(maxSpeed){
+            for(var i=0;i<100;i++){
+                update();
+            }
+        }
+        
+
+    };
+add to kill function:
+    maxSpeed=false;
+    if (killer.chealth>0) {
+        winnerElem.innerHTML = "Player " + killer.name + " won. They had " + killer.chealth + " health left.";
+    } else {
+        winnerElem.innerHTML = "Both players killed the other.";
+    }
+*********For game:
+rip out anything with socket emits in it, don't need to talk to server. Also remove DOM event handlers.
+replace with cli_ version
+    obs
+    projs 
+    players 
+    otherObjects
+remove drawminimap, drawborders. uicanvas, mobile, uicanvas
+set 
+    function drawGrid(ctx) {
+        ctx.strokeStyle = '#000000';
+        //ctx.beginPath();
+        xx = -campos[0] % 1500
+        yy = -campos[1] % 900
+
+        ctx.drawImage(bgrid, xx, yy);
+        if (campos[0] < mapw - 1500) {
+            ctx.drawImage(bgrid, xx + 1500, yy);
+        }
+        if (campos[1] < maph - 900) {
+            ctx.drawImage(bgrid, xx, yy + 900);
+        }
+        if (campos[1] < maph - 900 && campos[0] < mapw - 1500) {
+            ctx.drawImage(bgrid, xx + 1500, yy + 900);
+        }
+
+        ctx.stroke();
+    }
+var campos = [0, 0];
+keep only relevant socket ons from gameStartHandlers, call it immediately.
+get rid of removegamehandlers
+fiddle out all kinds of other small bits
+change rotate_point to cli_rotate_point
+health change needs updateHealthDisplay(p)
+

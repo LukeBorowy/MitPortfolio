@@ -1,0 +1,8 @@
+<filesMatch "\.(html|htm|js|css|php)$">
+Header set Cache-Control "public, no-cache, must-revalidate"
+Header set Pragma "no-cache"
+</filesMatch>
+<filesMatch "\.(png)$">
+Header set Cache-Control "public, no-cache, must-revalidate"
+Header set Pragma "no-cache"
+</filesMatch>

@@ -1,0 +1,33 @@
+body{
+    background-color: gray;
+}
+#changelog{
+    max-width: 95%;
+    width:1000px;
+    margin: 0 auto;
+}
+.change{
+    
+    background-color: rgba(0,0,0,0.75);
+    font-size: 22px;
+    border-radius: 5px;
+    padding:15px;
+    
+
+    color:white;
+    
+    margin-bottom:20px;
+}
+#back-button{
+    font-size: 22px;
+    display:inline-block;
+    padding:20px;
+    background-color: green;
+    width:100px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom:20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+}

@@ -1,0 +1,14 @@
+open a 500 by 300 game window
+draw a 70 by 10 rectangle at the bottom edge.
+start points at 0
+put the points at the top of the screen
+when the left key is pressed, move the rectangle left
+when the right key is pressed, move the rectangle right
+make the rectangle move 5 faster.
+draw a 15 by 15 green circle in the center of the screen
+start the circle moving
+make the circle go faster
+if the circle touches the rectangle, make the circle bounce off.
+if the circle touches the sides of the screen, make it bounce off.
+if the circle touches the top of the screen, make the circle go faster. gain a point.
+if the circle touches the bottom edge, display "You Lost" on screen. stop the circle. After 2 seconds, end the game.

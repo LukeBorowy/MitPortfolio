@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+	<title>Calculator</title>
+</head>
+
+<body onkeydown="keypressed(event)">
+	<script src="coffeequate.js"></script>
+	
+	<div id="container">
+		<div id="armor-div">
+			<label for="health">Health</label>
+			<input class="input" id="health" oninput="setVal(this.value,'health')" type="text" onkeyup="saveValue(this)"/>
+			<input class="slider" oninput="armorHealthSlider()" id="armor-health-slider" min="0" max="100" type="range" />
+			<label for="armor">Armor</label>
+			<input class="input" id="armor" oninput="setVal(this.value,'armor')" type="text" onkeyup="saveValue(this)" />
+		</div>
+		<!--<button style="position: absolute; left:5px; top:195px;" id="use-armor-stats">Use armor stats</button>-->
+
+		<div id="weapon-div">
+			<label for="damage" style="margin-right:30px">Damage</label>
+			<input class="input" id="damage" oninput="setVal(this.value,'damage')" type="text" onkeyup="saveValue(this)" />
+			<input class="slider" oninput="damageAspeedSlider()" id="damage-aspeed-slider" min="0" max="100" type="range" />
+			<label for="aspeed">Attack Speed</label>
+			<input class="input" id="aspeed" oninput="setVal(this.value,'aspeed')" type="text" onkeyup="saveValue(this)" />
+			<div style="position:absolute;top: 87px;left: 236px;">
+				<label for="armorp">Armor P.</label>
+				<input class="input" id="armorp" oninput="setVal(this.value,'armorp')" type="text" onkeyup="saveValue(this)" />
+			</div>
+			<input class="slider" id="damage-armorp-slider" oninput="damageArmorpSlider()" min="0" max="100" type="range" />
+		</div>
+		<!--<button style="position: absolute; left:380px; top:195px;" id="use-weapon-stats">Use weapon stats</button>-->
+		<div id="hittimes-div" style="
+				margin-top: 193px;
+				margin-left: 135px;
+			">
+			<label for="hittimes">Desired Hittimes</label>
+			<input class="input" id="hittimes" oninput="setVal(this.value,'hittimes')" type="text" />
+			<div>True Hittimes:
+				<span style="margin-left:20px" id="true-hittimes">10</span>
+			</div>
+		
+
+		</div>
+	</div>
+	<div id="simulation">
+		<canvas id="canvas" width="3000" height="1800"></canvas>
+		<div id="sim-winner"></div>
+		<button id="sim-start" onclick="beginSim()">Begin Simulation</button>
+		<button id="sim-pause" onclick="pauseClicked()">Pause Simulation</button>
+		<button id="sim-speedup" onclick="speedupClicked()">Speedup Simulation</button>
+		<div>Player A Health: <span id="a-current-health">100</span></div>
+		<div>Player B Health: <span id="b-current-health">100</span></div>
+	</div>
+	<div id="equip">
+		<div id="equip-A" class="equip-div">
+			<div>Stats for Player A</div>
+		</div>
+		
+		<div id="equip-B" class="equip-div">
+			<div>Stats for Player B</div>
+		</div>
+		<pre id="equipment-code"></pre>
+	</div>
+	<script src="makedivs.js"></script>
+	<script src="calc.js"></script>
+
+	<script src="simglue.js"></script>
+	<script src="simloader.js"></script>
+	<script src="simgame.js"></script>
+	<script src="simserver.js"></script>
+
+
+
+
+</body>
+
+</html>

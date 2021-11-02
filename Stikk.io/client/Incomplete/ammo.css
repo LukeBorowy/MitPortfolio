@@ -1,0 +1,32 @@
+#ammo-box{
+	background:rgba(0,0,0,0.75);
+	border-radius:5px;
+	display:table;
+	padding:5px;
+	
+}
+#ammo-amount,#times-icon,#ammo-max{
+	font-family:cursive;
+	vertical-align:middle;
+	display:table-cell;
+	color:white;
+	font-size:50px;
+}
+#times-icon{
+	font-size:25px;
+}
+#ammo-max{
+	font-size:30px;
+	color:grey;
+}
+#ammo-image{
+	height:60px;
+}
+/*mom likes with times, as do henry, ethan,matt*/
+/*
+#ammo-amount{
+	padding-left:7px;
+}
+#times-icon{
+display:none;	
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<meta name="keywords" content="stikkio, game, stikk.io, lukegame, battle, stickman, io">
+	<meta name="description" content="A fun IO game where you play as a stickman, collect money, upgrade your items, and fight your foes! Play stikkio now!"/>
+	<meta name="author" content="Luke Borowy"/>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+	
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="apple-mobile-web-app-title" content="Stikk.io">
+	<meta name="application-name" content="Stikk.io">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<meta name="theme-color" content="#9e98c7">
+
+		
+	
+	<link rel="stylesheet" href="styles.css">
+	
+	<title>Stikk.io - A fun stickman battle IO game!</title>
+</head>
+
+<body onbeforeunload="quitf()">
+
+	<div id="starts" class="fade">
+
+		<div id="centerSection">
+
+
+			<span id="death"></span>
+			<div id="joinDiv">
+				<img id="playButton" src="playIcon.png" onclick="startGame()" alt="Start Game">
+				<input id="name" autocomplete="off" type="text" autofocus placeholder="Nickname" maxlength="16">
+
+			</div>
+			<span id="startwith"></span>
+		</div>
+
+
+		<div id="changes"><script src="changes.js"></script></div>
+		<a href="changes.html">View full changelog</a>
+		
+
+
+		<select id="server" style="display: inline">
+			<option value="ws://stikkserver.us-3.evennode.com">US-CENTRAL</option>
+			<option value="192.168.1.17:8080">TEST</option>
+
+		</select>
+
+
+		<div id="loading" class="fade">
+
+			<h1 id="loading-text">Connecting to server...</h1>
+		</div>
+	</div>
+	<div id="gameStuff" class="fade" oncontextmenu="return false;" style="opacity: 0">
+		<canvas id="canvas" width="1500" height="900"></canvas>
+		<div id="ability-box">
+			<img id="ability-image" ondragstart="return false">
+			<div id="ability-cooldown"></div>
+		</div>
+		<canvas id="uicanvas" width="1500" height="900"></canvas>
+		<div id="leaderboard" class="round-rect">
+			Leaderboard
+		</div>
+		<div id="chat-box" class="round-rect">
+			<div id="chat-messages"></div>
+			
+			<input id="chat-input" autocomplete="on" autocapitalize="on"  type="text" placeholder="Press enter to chat..." maxlength="75">
+			<b id="chat-x">x</b>
+			
+		</div>
+		<div id="chat-title">Chat</div>
+
+		<div id="boost-bar">
+			
+			<canvas id="boost-canvas" width="1000" height="24"></canvas>
+			<span id="boost-text">Boost</span>
+		</div>
+		<div id="ammo-box">
+				<img src="img/bowammo.png" id="ammo-image" alt="Ammo:">
+				<img src="img/reloadIcon.png" id="reload-image" alt="Reloading"> 
+				<div id="ready-ammo" style="display:inline">
+					<span id="times-icon">x</span>
+					<span id="ammo-amount">5</span>
+					<span id="ammo-max">/5</span>
+			    </div>
+		</div>
+		
+				
+		<!--
+		<div id="right-ui">
+			<div id="hover-info" class="round-rect standard-text">
+				<span>Knight Sword</span>
+			</div>
+			<div id="money-section" class="round-rect">
+				<img src="img/coin.png" class="stat-icon"></img>
+				<span id="money-display" class="standard-text">0</span>
+			</div>
+			<div id="categories" class="round-rect">
+				<img src="img/helmeticon.png" class="touch-target a-category" id="category-helmets"></img>
+				<img src="img/chesticon.png" class="touch-target a-category" id="category-chest"></img>
+				<img src="img/footicon.png" class="touch-target a-category" id="category-boots"></img>
+				<img src="img/swordicon.png" class="touch-target a-category" id="category-weapons"></img>
+			</div>
+			<img src="img/shop.png" class="round-rect touch-target" id="shop-button"></img>
+		</div>
+	    -->
+	</div>
+
+	<script src="prepare.js"> </script>
+	<script src="socket.io/socket.io.min.js"></script>
+	<script src="joystick.js"></script>
+	<script src="loader.js"></script>
+	<script src="game.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120932284-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-120932284-1');
+	</script>
+
+
+</body>
+
+</html>
